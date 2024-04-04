@@ -1,15 +1,29 @@
-import { Typography } from "@mui/material"
+import { createBrowserRouter,RouterProvider } from "react-router-dom"
+import Chats from "./pages/Chats"
+import CssBaseline from '@mui/material/CssBaseline';
+
 import Login from "./pages/Login"
+
+const router= createBrowserRouter([
+  {
+path:"/",
+element:<Chats /> ,
+},
+{
+  path:"/login",
+  element: <Login />
+}
+]);
 
 
 function App() {
 
   return (
     <>
-      <h1>hello</h1>
-      <p>hello</p>
-      <Typography>hello</Typography>
-      <Login/>
+            <CssBaseline />
+
+      <RouterProvider router={router}/>
+      {/* <Login/> */}
     </>
   )
 }
